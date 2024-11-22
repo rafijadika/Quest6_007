@@ -9,5 +9,5 @@ fun DynamicSelectedField(
     onValueChangedEvent: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    var expanded 
+    var expanded
 }
