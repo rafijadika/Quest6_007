@@ -152,7 +152,50 @@ fun MahasiswaFormView(
                     shape = RoundedCornerShape(50.dp)
                 )
 
+                Spacer(modifier = Modifier.padding(4.dp))
+                OutlinedTextField(
+                    modifier = Modifier.fillMaxWidth(),
+                    value = textEmail,
+                    onValueChange = {textEmail = it},
+                    label = {
+                        Text(text = "Email Mahasiswa")
+                    },
+                    leadingIcon = {
+                        Icon(
+                            imageVector = Icons.Filled.Email,
+                            contentDescription = ""
+                        )
+                    },
+                    keyboardOptions = KeyboardOptions(
+                        keyboardType = KeyboardType.Email,
+                        imeAction = ImeAction.Next
+                    ),
+                    singleLine = true,
+                    shape = RoundedCornerShape(50.dp)
+                )
 
+                Spacer(modifier = Modifier.padding(16.dp))
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ) {
+                    Button(
+                        onClick = {
+                            onBackButtonClick()
+                        }
+                    ) {
+                        Text(
+                            text = "Kembali"
+                        )
+                    }
+                    Button(
+                        onClick = {
+                            onSubmitButtonClick(listData)
+                        }
+                    ) {
+                        Text(
+                            text = "Save"
                         )
                     }
                 }
