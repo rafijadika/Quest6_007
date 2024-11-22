@@ -1,3 +1,5 @@
+package com.example.pertemuan7.ui.view.screen
+
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -32,14 +34,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.pertemuan7.R
 
 @Composable
 fun MahasiswaFormView(
-    modifier: Modifier = Modifier,
     onSubmitButtonClick: (MutableList<String>) -> Unit,
     onBackButtonClick: () -> Unit
 ){

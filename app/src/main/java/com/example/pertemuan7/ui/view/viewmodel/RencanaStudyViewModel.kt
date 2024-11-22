@@ -7,38 +7,27 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 
-class RencanaStudyViewModel : ViewModel() {
-
-    // StateFlow untuk menyimpan data KRS
+class RencanaStudyViewModel : ViewModel(){
     private val _krsState = MutableStateFlow(RencanaStudi())
     val krsStateUi: StateFlow<RencanaStudi> = _krsState.asStateFlow()
 
 
     fun setMataKuliah(mkPilihan: String) {
-        _krsState.update { currentState ->
-            currentState.copy(mataKuliah = mkPilihan)
-        }
+        _krsState.update { stateMk -> stateMk.copy(namaMK = mkPilihan) }
     }
 
 
     fun setKelas(kelasPilihan: String) {
-        _krsState.update { currentState ->
-            currentState.copy(kelas = kelasPilihan)
-        }
+        _krsState.update { stateKelas -> stateKelas.copy(kelas = kelasPilihan) }
     }
 
 
-    fun saveDataKRS(data: MutableList<String>) {
-        if (data.size >= 2) {
-            _krsState.update { currentState ->
-                currentState.copy(
-                    mataKuliah = data[0],
-                    kelas = data[1]
-                )
-            }
-        } else {
-            // Log error atau tambahkan validasi untuk input yang tidak sesuai
-            throw IllegalArgumentException("Data KRS tidak valid. Pastikan semua data sudah dipilih.")
-        }
+    fun saveDataKRS(ls: MutableList<String>) {
+        _krsState.update { status -> status.copy(
+            namaMK = ls[0],
+            kelas = ls[1]
+        ) }
     }
+
+
 }

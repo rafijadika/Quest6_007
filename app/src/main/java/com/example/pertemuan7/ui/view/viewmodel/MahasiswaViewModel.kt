@@ -2,6 +2,7 @@ package com.example.pertemuan7.ui.view.viewmodel
 
 import androidx.lifecycle.ViewModel
 import com.example.pertemuan7.Modell.Mahasiswa
+import com.example.pertemuan7.navigation.MahasiswaApp
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
