@@ -40,7 +40,13 @@ fun DynamicSelectedField(
         )
         ExposedDropdownMenu(expanded = expanded, onDismissRequest = {expanded = false}) {
             option.forEach { option: String ->
-                DropdownMenuItem(exp)
+                DropdownMenuItem(
+                    text = { Text(text = option) },
+                    onClick = {
+                        expanded = false
+                        onValueChangedEvent(option)
+                    }
+                )
             }
         }
     }
